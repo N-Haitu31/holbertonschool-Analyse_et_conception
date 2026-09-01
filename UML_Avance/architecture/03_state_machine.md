@@ -1,4 +1,4 @@
-# # Diagramme d'États-Transitions — Commande
+# Diagramme d'États-Transitions — Commande
 
 Ce diagramme modélise le cycle de vie d'une commande, en garantissant qu'aucune commande
 ne peut atteindre l'état `SHIPPED` sans être passée par un paiement validé (`PAID`).
