@@ -10,9 +10,23 @@ paths:
     post:
       summary: Webhook de notification de paiement
       description: Reçoit la notification de statut de paiement envoyée par la banque partenaire.
+      tags:
+        - Payments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookPayload'
       responses:
-        '200':
-          description: OK
+        '204':
+          description: Traitement réussi, aucun contenu retourné
+        '400':
+          description: Requête invalide
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
     # A compléter lors des ateliers
