@@ -29,4 +29,20 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
-    # A compléter lors des ateliers
+    WebhookPayload:
+      type: object
+      required:
+        - orderId
+        - status
+        - transactionId
+      properties:
+        orderId:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [SUCCESS, FAILED]
+        transactionId:
+          type: string
+          pattern: '^TXN-[0-9]{8}$'
+      additionalProperties: false
