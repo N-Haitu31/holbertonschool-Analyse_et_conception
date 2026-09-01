@@ -4,6 +4,7 @@ Ce diagramme modélise l'orchestration du paiement d'une commande via un Message
 l'API répond immédiatement au client (202 Accepted) sans attendre la confirmation bancaire,
 que le Worker traite de façon découplée en tâche de fond.
 
+```mermaid
 sequenceDiagram
     participant A as Client
     participant B as API
@@ -28,3 +29,4 @@ sequenceDiagram
     else Banque refuse
         E->>C: UPDATE status = FAILED
     end
+```
