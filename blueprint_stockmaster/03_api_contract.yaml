@@ -1,0 +1,29 @@
+paths:
+  /inventory/movements:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - emplacementId
+                - typeMouvement
+                - quantite
+              properties:
+                emplacementId:
+                  type: string
+                  format: uuid
+                typeMouvement:
+                  type: string
+                  enum: [ENTREE, SORTIE]
+                quantite:
+                  type: integer
+                  minimum: 1
+              additionalProperties: false
+      responses:
+        '201':
+          description: Création Mouvement
+        '409':
+          description: Conflict
