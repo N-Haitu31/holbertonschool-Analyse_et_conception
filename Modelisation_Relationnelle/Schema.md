@@ -12,7 +12,7 @@ flowchart LR
     PASSE{"Passe"}
     CONTIENT{"Contient<br/>――――<br/>qte<br/>prix_unitaire_facture"}
  
-    CLIENT -- "1,n" --- PASSE
+    CLIENT -- "0,n" --- PASSE
     PASSE -- "1,1" --- COMMANDE
     COMMANDE -- "1,n" --- CONTIENT
     CONTIENT -- "0,n" --- PRODUIT
@@ -23,8 +23,8 @@ Les entités sont des rectangles, les associations "Passe" et "Contient" sont de
 ## Lecture en cardinalités Merise (min,max)
  
 **Association "Passe" (CLIENT ↔ COMMANDE)**
-`CLIENT (1,n) —— (1,1) COMMANDE`
-Un client a passé au moins une commande, jusqu'à n. Une commande est passée par exactement un client.
+`CLIENT (0,n) —— (1,1) COMMANDE`
+Un client peut avoir passé de 0 à n commandes. Une commande est passée par exactement un client.
  
 **Association porteuse "Contient" (COMMANDE ↔ PRODUIT)**
 `COMMANDE (1,n) —— (0,n) PRODUIT`
