@@ -1,6 +1,23 @@
+openapi: 3.0.3
+info:
+  title: StockMaster Inventory API
+  version: 1.0.0
+  description: API interne de gestion des mouvements de stock pour les entrepôts StockMaster.
+  contact:
+    name: StockMaster API Team
+    email: api-support@stockmaster.example.com
+servers:
+  - url: https://api.stockmaster.example.com/v1
+tags:
+  - name: Inventory
+    description: Opérations liées aux mouvements de stock (entrées et sorties).
 paths:
   /inventory/movements:
     post:
+      description: Enregistre un mouvement d'entrée ou de sortie de stock pour un emplacement donné.
+      operationId: createInventoryMovement
+      tags:
+        - Inventory
       requestBody:
         required: true
         content:
