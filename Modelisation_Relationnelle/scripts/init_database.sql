@@ -30,7 +30,7 @@ CREATE TABLE ligne_commande (
     id_cmd VARCHAR NOT NULL REFERENCES commande(id_cmd) ON DELETE CASCADE,
     code_prod VARCHAR NOT NULL REFERENCES produit(code_prod) ON DELETE RESTRICT,
     qte INTEGER CHECK (qte > 0) NOT NULL,
-    prix_unitaire_facture DECIMAL(10,2),
+    prix_unitaire_facture DECIMAL(10,2) NOT NULL,
     PRIMARY KEY (id_cmd, code_prod)
 );
 
