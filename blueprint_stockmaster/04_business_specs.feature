@@ -15,7 +15,8 @@ Feature: Traçabilité et sécurisation des mouvements d'inventaire
 
     Examples:
       | stock_initial | quantite_sortie | resultat                                           |
-      | 20            | 5                | le stock disponible est de 15 unités               |
-      | 20            | 20               | le stock disponible est de 0 unité                 |
-      | 20            | 21               | la sortie est refusée car le stock est insuffisant |
-      | 20            | 50               | la sortie est refusée car le stock est insuffisant |
+      | 20            | 5               | le stock disponible est de 15 unités               |
+      | 20            | 20              | le stock disponible est de 0 unité                 |
+      | 20            | 21              | la sortie est refusée car le stock est insuffisant |
+      | 20            | 50              | la sortie est refusée car le stock est insuffisant |
+
